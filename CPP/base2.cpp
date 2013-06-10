@@ -22,13 +22,13 @@ int strcmp(const char *src, const char *dst)
 }
 
 
-void * memset(void * buf, int c, size_t count);
+void * memset(void * buf, int c, size_t count)
 {
     char * pCur = (char *)buf;
     assert(buf != NULL);
     while (count > 0)
     {
-        pCur = (char)c;
+        *pCur = (char)c;
         pCur++;
         count--;
     }
@@ -36,9 +36,23 @@ void * memset(void * buf, int c, size_t count);
     return buf;
 }
 
+char * strcpy(char * dst, const char *src)
+{
+    char * pCur = dst;
+    while (*src != '\0')
+    {
+        *pCur = *src;
+        pCur++;
+        src++;
+    }
+    return dst;
+}
+
 
 int main(void)
 {
-    printf("%d\n", sizeof(size_t));
+    char s[20];
+    strcpy(s, "hello world~!"); 
+    printf("%s\n", s);   
     return 0;
 }

@@ -61,7 +61,7 @@ int main()
     char num[N];
     while (scanf("%s", num) != EOF)
     {
-        printf("the result = %f\n", atof("-12345.111"));
+        printf("the result = %f\n", atof(num));
     }
     return 0;
 }
